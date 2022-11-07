@@ -1,0 +1,130 @@
+.input {
+  text-align: center;
+  border: none;
+  background-color: lightgray;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+.floor1 {
+  color: black;
+  justify-content: space-around;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+
+.lift1 {
+  color: black;
+  justify-content: space-between;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  align-self: center;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo {
+  justify-content: center space-around;
+  text-align: center;
+  border-radius: 5px;
+  background-color: darkseagreen;
+}
+
+/* lift style contenet */
+
+.floor-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.floor {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.ground-floor-container {
+  height: 100%;
+  display: flex;
+}
+
+.floornum {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: content;
+}
+
+.btn-move {
+  padding: 2px;
+  height: 2rem;
+  width: 3rem;
+  border: black;
+  border-width: 1px;
+  border-color: aquamarine;
+  border-radius: 5px;
+}
+
+.btn-move:hover {
+  background-color: rgb(97, 220, 234);
+  text-decoration: rgb(12, 32, 50);
+}
+
+.lift {
+  border: 1px solid black;
+  height: 80px;
+  top: 15px;
+  width: 66px;
+  margin-left: 20px;
+  position: relative;
+  display: inline-flex;
+  background-color: transparent;
+  transition: 2s ease-in;
+}
+
+.right-door {
+  height: 100%;
+  width: 50%;
+  border: 1px solid black;
+  background-color: aqua;
+  justify-content: space-between;
+  transition-duration: 2.5s;
+}
+
+.move-right {
+  transform: translate(100%);
+  transition-duration: 2.5s;
+}
+
+.left-door {
+  height: 100%;
+  width: 50%;
+  border: 1px solid black;
+  background-color: aqua;
+  justify-content: space-between;
+  transition-duration: 2.5s;
+}
+
+.move-left {
+  transform: translate(-100%);
+  transition-duration: 2.5s;
+}
+
+/* Sample test code */

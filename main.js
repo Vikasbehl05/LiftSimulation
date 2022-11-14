@@ -3,10 +3,21 @@ var lift = document.getElementById("liftInput");
 var submitButton = document.getElementById("submit");
 var layer = document.getElementById("layer");
 
+validateFloor = () => {
+  if (floor.value >= 1 && floor.value <= 6) return true;
+  else return false;
+};
+
+validateLift = () => {
+  if (lift.value >= 1 || lift.value <= 4) return true;
+  else return false;
+};
+
 submitButton.addEventListener("click", () => {
-  let addedFloors = "";
-  for (var i = floor.value - 1; i >= 0; i--) {
-    addedFloors += `<div class="floor-container" id="lt" data-floorContainer="${i}">
+  if (validateFloor() && validateLift()) {
+    let addedFloors = "";
+    for (var i = floor.value - 1; i >= 0; i--) {
+      addedFloors += `<div class="floor-container" id="lt" data-floorContainer="${i}">
     <div class="floor">
       <div class="ground-floor-container">
         <div class="button-container">
@@ -19,11 +30,16 @@ submitButton.addEventListener("click", () => {
      <p class ="floornum">Floor:${i}</p>
   </div>
   `;
-    console.log(i);
-  }
+      console.log(i);
+    }
 
-  layer.innerHTML = addedFloors;
-  return;
+    layer.innerHTML = addedFloors;
+    return;
+  } else {
+    return alert(
+      "enter the value of floor between the range 1 to 6 and value of lift between the range 1 to 4 "
+    );
+  }
 });
 
 function addLift(numberOfLifts) {
@@ -63,9 +79,6 @@ function liftStatus(targetFloor) {
 }
 
 function startLift(targetFloor, freeLift) {
-  console.log(targetFloor);
-  console.log(-135 * targetFloor);
-
   const currentPosition = freeLift.dataset.liftposition;
   const time = Math.abs(targetFloor - currentPosition);
   freeLift.style.transition = `transform ${time * 2}s linear`;
@@ -79,9 +92,9 @@ function startLift(targetFloor, freeLift) {
   setTimeout(() => {
     freeLift.children[0].classList.remove("move-left");
     freeLift.children[1].classList.remove("move-right");
-  }, time * 2000 + 4000);
+  }, time * 2000 + 2000);
 
   setTimeout(() => {
     freeLift.classList.remove("busy");
-  }, time * 2000 + 2000);
+  }, time * 2000 + 2500);
 }

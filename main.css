@@ -105,12 +105,17 @@
   border: 1px solid black;
   background-color: aqua;
   justify-content: space-between;
-  transition-duration: 2.5s;
+  transition-duration: 2s;
 }
 
 .move-right {
   transform: translate(100%);
-  transition-duration: 2.5s;
+  transition-duration: 1s;
+  /* animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-name: doorSimulation;
+  right: 0;
+ */
 }
 
 .left-door {
@@ -119,12 +124,28 @@
   border: 1px solid black;
   background-color: aqua;
   justify-content: space-between;
-  transition-duration: 2.5s;
+  transition-duration: 2s;
 }
 
 .move-left {
   transform: translate(-100%);
-  transition-duration: 2.5s;
+  transition-duration: 1s;
+  /* animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-name: doorSimulation;
+  left: 0; */
+}
+
+@keyframes doorSimulation {
+  from {
+    width: 50%;
+  }
+  50% {
+    width: 0%;
+  }
+  to {
+    width: 50%;
+  }
 }
 
 /* Sample test code */
